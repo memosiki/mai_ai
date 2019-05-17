@@ -3,10 +3,10 @@ import matplotlib
 import matplotlib.pyplot as plt
 
 df = pd.read_csv("^IXIC.csv")
-# print(df.columns)
-# df.plot.scatter(x='Open', y='High')
-# df.plot.scatter(x='High', y='Close')
-# df.plot.scatter(x='Open', y='Adj Close')
+print(df.columns)
+df.plot.scatter(x='Open', y='High')
+df.plot.scatter(x='Close', y='High')
+df.plot.scatter(x='Open', y='Adj Close')
 
 adj_price = df["Adj Close"]
 print("Характеристики для скорректированной цены")
