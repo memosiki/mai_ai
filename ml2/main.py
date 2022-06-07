@@ -45,7 +45,7 @@ def stocks():
     # пропускаем первую строку с подписями столбцов
     for elem in df[1:]:
         # пропускаем первый столбец с индексами строки
-        X.append(elem[1:len(elem) - 1])
+        X.append(elem[1:-1])
         y.append(elem[len(elem) - 1])
     # приводим типы из str в соответсвующие
     y = np.array([int(elem) for elem in y])
