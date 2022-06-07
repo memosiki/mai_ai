@@ -11,9 +11,7 @@ df['Date'] = df['Date'].map(lambda s:
 
 # если в течение дня была получена прибыль, то значение нового столбца 1
 # иначе 0
-profit = []
-for op, cl in zip(df['Open'], df['Close']):
-    profit.append(1 if cl > op else 0)
+profit = [1 if cl > op else 0 for op, cl in zip(df['Open'], df['Close'])]
 df = df.assign(Profit=profit)
 # print(df['Profit'])
 df.to_csv("IXIC-redacted.csv")
